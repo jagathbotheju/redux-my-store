@@ -12,7 +12,7 @@ const ProductDetail = () => {
   const { productId } = useParams();
   const dispatch = useDispatch();
   let product = useSelector((state) => state.product);
-  const { id, title, price, description, category, image } = product;
+  const { title, price, description, category, image } = product;
 
   const fetchProductDetail = async () => {
     const response = await axios
@@ -27,7 +27,6 @@ const ProductDetail = () => {
       dispatch(removeSelectedProduct());
     };
   }, [productId]);
-  console.log(product);
 
   return (
     <>

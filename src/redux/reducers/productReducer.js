@@ -1,4 +1,3 @@
-import React from "react";
 import { ActionTypes } from "../constants/action-types";
 
 const initialState = {

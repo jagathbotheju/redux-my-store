@@ -8,7 +8,7 @@ const ProductComponent = () => {
   return (
     <>
       {products.map((product) => {
-        const { id, title, price, description, category, image } = product;
+        const { id, title, price, category, image } = product;
 
         return (
           <div
