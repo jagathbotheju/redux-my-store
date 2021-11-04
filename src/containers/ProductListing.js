@@ -1,22 +1,14 @@
 import React from "react";
 import { useEffect } from "react";
 import ProductComponent from "./ProductComponent";
-import axios from "axios";
 import { useDispatch } from "react-redux";
-import { setProducts } from "../redux/actions/productActions";
+import { fetchProducts } from "../redux/actions/productActions";
 
 const ProductListing = () => {
   const dispatch = useDispatch();
 
-  const fetchProducts = async () => {
-    const response = await axios
-      .get("https://fakestoreapi.com/products")
-      .catch((error) => {});
-    dispatch(setProducts(response.data));
-  };
-
   useEffect(() => {
-    fetchProducts();
+    dispatch(fetchProducts());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
